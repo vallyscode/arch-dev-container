@@ -1,0 +1,5 @@
+[user]
+	name = Valerii Lysenko
+	email = vallyscode@gmail.com
+[alias]
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(cyan)<%an>%Creset' --abbrev-commit --date=relative
