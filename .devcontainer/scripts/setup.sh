@@ -21,3 +21,4 @@ mv /tmp/scripts/.zshrc /home/$USERNAME/ && chown $USERNAME:$USERNAME /home/$USER
 mv /tmp/scripts/.gitconfig /home/$USERNAME/ && chown $USERNAME:$USERNAME /home/$USERNAME/.gitconfig
 
 runuser -l $USERNAME -c 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash'
+runuser -l $USERNAME -c '. /home/vscode/.nvm/nvm.sh && nvm install --lts && nvm use --lts'
