@@ -4,6 +4,7 @@ export HISTORY_IGNORE="(ls|cd|pwd|exit|history|cd -|cd ..)"
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+
 if [ -d "$HOME/.bin" ] ;
   then PATH="$HOME/.bin:$PATH"
 fi
@@ -11,6 +12,7 @@ fi
 if [ -d "$HOME/.local/bin" ] ;
   then PATH="$HOME/.local/bin:$PATH"
 fi
+
 
 autoload -Uz promptinit
 promptinit
