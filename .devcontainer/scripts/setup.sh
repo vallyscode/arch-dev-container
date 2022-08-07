@@ -46,6 +46,13 @@ chown $USERNAME:$USERNAME /install.sh
 runuser -l $USERNAME -c "/install.sh -y"
 rm /install.sh
 
+# haskell
+curl --proto '=https' --tlsv1.2 -sSfL https://get.haskellstack.org > install.sh
+chmod +x install.sh
+chown $USERNAME:$USERNAME /install.sh
+runuser -l $USERNAME -c "/install.sh"
+rm /install.sh
+
 # vscode extensions
 runuser -l $USERNAME -c ". /home/$USERNAME/.nvm/nvm.sh && npm install -g yo generator-code"
 
