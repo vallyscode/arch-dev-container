@@ -53,8 +53,19 @@ runuser -l $USERNAME -c ". /home/$USERNAME/.nvm/nvm.sh && npm install -g yo gene
 pacman --noconfirm -S hugo
 
 # Golang
-GO_VERSION=1.18
+GO_VERSION=1.19
 curl -sSLO https://golang.org/dl/go${GO_VERSION}.linux-amd64.tar.gz
 rm -rf /usr/local/go && tar -C /usr/local -xzf go${GO_VERSION}.linux-amd64.tar.gz
 rm go${GO_VERSION}.linux-amd64.tar.gz
 
+# Java
+JAVA_VERSION=18
+curl -sSLO https://corretto.aws/downloads/latest/amazon-corretto-${JAVA_VERSION}-x64-linux-jdk.tar.gz
+tar -C /home/$USERNAME -xzf amazon-corretto-${JAVA_VERSION}-x64-linux-jdk.tar.gz
+rm amazon-corretto-${JAVA_VERSION}-x64-linux-jdk.tar.gz
+
+# Maven
+MVN_VERSION=3.8.6
+curl -sSLO https://dlcdn.apache.org/maven/maven-3/${MVN_VERSION}/binaries/apache-maven-${MVN_VERSION}-bin.tar.gz
+tar -C /home/$USERNAME -xzf apache-maven-${MVN_VERSION}-bin.tar.gz
+rm apache-maven-${MVN_VERSION}-bin.tar.gz
