@@ -7,7 +7,7 @@ export PATH=$PATH:$HOME/go/bin
 export PATH=$PATH:$HOME/.cargo/bin
 
 # java
-export JAVA_HOME=$HOME/amazon-corretto-18.0.2.9.1-linux-x64
+export JAVA_HOME=$HOME/amazon-corretto-19.0.0.36.1-linux-x64
 export PATH=$PATH:$JAVA_HOME/bin
 
 # maven

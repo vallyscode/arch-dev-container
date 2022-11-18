@@ -26,8 +26,8 @@ mv /tmp/scripts/.zprofile /home/$USERNAME/ && chown $USERNAME:$USERNAME /home/$U
 mv /tmp/scripts/.gitconfig /home/$USERNAME/ && chown $USERNAME:$USERNAME /home/$USERNAME/.gitconfig
 
 # nodejs
-runuser -l $USERNAME -c "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash"
-runuser -l $USERNAME -c ". /home/$USERNAME/.nvm/nvm.sh && nvm install 14 && nvm use 14"
+runuser -l $USERNAME -c "ccurl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bashurl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash"
+runuser -l $USERNAME -c ". /home/$USERNAME/.nvm/nvm.sh && nvm install 16 && nvm use 16"
 
 # aws cli v2
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
@@ -46,13 +46,6 @@ chown $USERNAME:$USERNAME /install.sh
 runuser -l $USERNAME -c "/install.sh -y"
 rm /install.sh
 
-# haskell
-curl --proto '=https' --tlsv1.2 -sSfL https://get.haskellstack.org > install.sh
-chmod +x install.sh
-chown $USERNAME:$USERNAME /install.sh
-runuser -l $USERNAME -c "/install.sh"
-rm /install.sh
-
 # vscode extensions
 runuser -l $USERNAME -c ". /home/$USERNAME/.nvm/nvm.sh && npm install -g yo generator-code"
 
@@ -60,13 +53,13 @@ runuser -l $USERNAME -c ". /home/$USERNAME/.nvm/nvm.sh && npm install -g yo gene
 pacman --noconfirm -S hugo
 
 # Golang
-GO_VERSION=1.19
+GO_VERSION=1.19.3
 curl -sSLO https://golang.org/dl/go${GO_VERSION}.linux-amd64.tar.gz
 rm -rf /usr/local/go && tar -C /usr/local -xzf go${GO_VERSION}.linux-amd64.tar.gz
 rm go${GO_VERSION}.linux-amd64.tar.gz
 
 # Java
-JAVA_VERSION=18
+JAVA_VERSION=19
 curl -sSLO https://corretto.aws/downloads/latest/amazon-corretto-${JAVA_VERSION}-x64-linux-jdk.tar.gz
 tar -C /home/$USERNAME -xzf amazon-corretto-${JAVA_VERSION}-x64-linux-jdk.tar.gz
 rm amazon-corretto-${JAVA_VERSION}-x64-linux-jdk.tar.gz
