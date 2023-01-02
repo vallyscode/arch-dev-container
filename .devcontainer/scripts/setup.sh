@@ -65,7 +65,7 @@ tar -C /home/$USERNAME -xzf amazon-corretto-${JAVA_VERSION}-x64-linux-jdk.tar.gz
 rm amazon-corretto-${JAVA_VERSION}-x64-linux-jdk.tar.gz
 
 # Maven
-MVN_VERSION=3.8.6
+MVN_VERSION=3.8.7
 curl -sSLO https://dlcdn.apache.org/maven/maven-3/${MVN_VERSION}/binaries/apache-maven-${MVN_VERSION}-bin.tar.gz
 tar -C /home/$USERNAME -xzf apache-maven-${MVN_VERSION}-bin.tar.gz
 rm apache-maven-${MVN_VERSION}-bin.tar.gz
