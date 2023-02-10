@@ -53,7 +53,7 @@ runuser -l $USERNAME -c ". /home/$USERNAME/.nvm/nvm.sh && npm install -g yo gene
 pacman --noconfirm -S hugo
 
 # Golang
-GO_VERSION=1.19.4
+GO_VERSION=1.20
 curl -sSLO https://golang.org/dl/go${GO_VERSION}.linux-amd64.tar.gz
 rm -rf /usr/local/go && tar -C /usr/local -xzf go${GO_VERSION}.linux-amd64.tar.gz
 rm go${GO_VERSION}.linux-amd64.tar.gz
