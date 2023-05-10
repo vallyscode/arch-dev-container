@@ -17,7 +17,6 @@ fi
 export PROMPT="%F{106}╭╴(%f%F{024}%~%f%F{106})"$'\n'"╰╴%Bλ%b%f "
 autoload -Uz promptinit
 promptinit
-# prompt adam2
 
 setopt histignorealldups sharehistory
 

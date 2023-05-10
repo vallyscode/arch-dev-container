@@ -26,8 +26,8 @@ mv /tmp/scripts/.zprofile /home/$USERNAME/ && chown $USERNAME:$USERNAME /home/$U
 mv /tmp/scripts/.gitconfig /home/$USERNAME/ && chown $USERNAME:$USERNAME /home/$USERNAME/.gitconfig
 
 # nodejs
-runuser -l $USERNAME -c "ccurl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bashurl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash"
-runuser -l $USERNAME -c ". /home/$USERNAME/.nvm/nvm.sh && nvm install 16 && nvm use 16"
+runuser -l $USERNAME -c "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash"
+runuser -l $USERNAME -c ". /home/$USERNAME/.nvm/nvm.sh && nvm install 18 && nvm use 18"
 
 # aws cli v2
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
@@ -53,19 +53,19 @@ runuser -l $USERNAME -c ". /home/$USERNAME/.nvm/nvm.sh && npm install -g yo gene
 pacman --noconfirm -S hugo
 
 # Golang
-GO_VERSION=1.20
+GO_VERSION=1.20.2
 curl -sSLO https://golang.org/dl/go${GO_VERSION}.linux-amd64.tar.gz
 rm -rf /usr/local/go && tar -C /usr/local -xzf go${GO_VERSION}.linux-amd64.tar.gz
 rm go${GO_VERSION}.linux-amd64.tar.gz
 
 # Java
-JAVA_VERSION=19
+JAVA_VERSION=20
 curl -sSLO https://corretto.aws/downloads/latest/amazon-corretto-${JAVA_VERSION}-x64-linux-jdk.tar.gz
 tar -C /home/$USERNAME -xzf amazon-corretto-${JAVA_VERSION}-x64-linux-jdk.tar.gz
 rm amazon-corretto-${JAVA_VERSION}-x64-linux-jdk.tar.gz
 
 # Maven
-MVN_VERSION=3.8.7
+MVN_VERSION=3.9.1
 curl -sSLO https://dlcdn.apache.org/maven/maven-3/${MVN_VERSION}/binaries/apache-maven-${MVN_VERSION}-bin.tar.gz
 tar -C /home/$USERNAME -xzf apache-maven-${MVN_VERSION}-bin.tar.gz
 rm apache-maven-${MVN_VERSION}-bin.tar.gz
