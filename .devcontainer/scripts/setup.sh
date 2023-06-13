@@ -36,7 +36,10 @@ unzip awscliv2.zip
 rm -rf awscliv2.zip
 
 # sam cli
-pip install aws-sam-cli
+curl -sSLO https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-linux-x86_64.zip
+unzip aws-sam-cli-linux-x86_64.zip -d sam-installation
+./sam-installation/install
+rm -rf aws-sam-cli-linux-x86_64.zip
 
 # rust
 pacman --noconfirm -S gcc make valgrind
