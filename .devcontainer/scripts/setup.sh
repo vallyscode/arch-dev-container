@@ -25,6 +25,7 @@ mv /tmp/scripts/.zshrc /home/$USERNAME/ && chown $USERNAME:$USERNAME /home/$USER
 mv /tmp/scripts/.zprofile /home/$USERNAME/ && chown $USERNAME:$USERNAME /home/$USERNAME/.zprofile
 mv /tmp/scripts/.gitconfig /home/$USERNAME/ && chown $USERNAME:$USERNAME /home/$USERNAME/.gitconfig
 
+
 # nodejs
 runuser -l $USERNAME -c "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash"
 runuser -l $USERNAME -c ". /home/$USERNAME/.nvm/nvm.sh && nvm install 18 && nvm use 18"
@@ -52,23 +53,23 @@ rm /install.sh
 # vscode extensions
 runuser -l $USERNAME -c ". /home/$USERNAME/.nvm/nvm.sh && npm install -g yo generator-code"
 
-# Go hugo
+# go hugo
 pacman --noconfirm -S hugo
 
-# Golang
+# golang
 GO_VERSION=1.20.2
 curl -sSLO https://golang.org/dl/go${GO_VERSION}.linux-amd64.tar.gz
 rm -rf /usr/local/go && tar -C /usr/local -xzf go${GO_VERSION}.linux-amd64.tar.gz
 rm go${GO_VERSION}.linux-amd64.tar.gz
 
-# Java
+# java
 JAVA_VERSION=20
 curl -sSLO https://corretto.aws/downloads/latest/amazon-corretto-${JAVA_VERSION}-x64-linux-jdk.tar.gz
-tar -C /home/$USERNAME -xzf amazon-corretto-${JAVA_VERSION}-x64-linux-jdk.tar.gz
+rm -rf /usr/local/amazon-corretto-* && tar -C /usr/local -xzf amazon-corretto-${JAVA_VERSION}-x64-linux-jdk.tar.gz
 rm amazon-corretto-${JAVA_VERSION}-x64-linux-jdk.tar.gz
 
-# Maven
+# maven
 MVN_VERSION=3.9.1
 curl -sSLO https://dlcdn.apache.org/maven/maven-3/${MVN_VERSION}/binaries/apache-maven-${MVN_VERSION}-bin.tar.gz
-tar -C /home/$USERNAME -xzf apache-maven-${MVN_VERSION}-bin.tar.gz
+rm -rf /usr/local/apache-maven-* && tar -C /usr/local -xzf apache-maven-${MVN_VERSION}-bin.tar.gz
 rm apache-maven-${MVN_VERSION}-bin.tar.gz
