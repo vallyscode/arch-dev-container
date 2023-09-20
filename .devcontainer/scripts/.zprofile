@@ -13,3 +13,7 @@ export PATH="${JAVA_HOME}/bin:$PATH"
 ## maven
 export M2_HOME="/usr/local/apache-maven-3.9.3"
 export PATH="${M2_HOME}/bin:$PATH"
+
+## .NET
+export DOTNET_ROOT="/usr/local/.dotnet"
+export PATH="${DOTNET_ROOT}:${DOTNET_ROOT}/tools:$PATH"

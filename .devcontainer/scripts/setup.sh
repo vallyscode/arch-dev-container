@@ -73,3 +73,9 @@ MVN_VERSION=3.9.3
 curl -sSLO https://dlcdn.apache.org/maven/maven-3/${MVN_VERSION}/binaries/apache-maven-${MVN_VERSION}-bin.tar.gz
 rm -rf /usr/local/apache-maven-* && tar -C /usr/local -xzf apache-maven-${MVN_VERSION}-bin.tar.gz
 rm apache-maven-${MVN_VERSION}-bin.tar.gz
+
+# .NET
+NET_VERSION=6.0.414
+curl -sSLO https://download.visualstudio.microsoft.com/download/pr/d97d1625-d7ed-444c-a7e9-e7b469842960/d8b97220d0d79119e3026da2b956854e/dotnet-sdk-${NET_VERSION}-linux-x64.tar.gz
+rm -rf /usr/local/.dotnet && mkdir -p /usr/local/.dotnet && tar -C /usr/local/.dotnet -xzf dotnet-sdk-${NET_VERSION}-linux-x64.tar.gz
+rm dotnet-sdk-${NET_VERSION}-linux-x64.tar.gz
